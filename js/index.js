@@ -377,16 +377,23 @@
 
 // function mostFrequentCharacter(str) {
 //     let res = {};
-//     str.split('').forEach(char => {
-//         res[char] = (res[char] || 0) + 1;
-//     });
-//     return Object.keys(res).reduce(function(a, b) {
-//         if (res[a] > res[b]) {
-//             return a
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
+//         if (res[char]) {
+//             res[char] += 1;
 //         } else {
-//             return b
+//             res[char] = 1;
 //         }
-//     });
+//     }
+//     let maxChar = '';
+//     let maxCount = 0;
+//     for (let char in res) {
+//         if (res[char] > maxCount) {
+//             maxCount = res[char];
+//             maxChar = char;
+//         }
+//     }
+//     return maxChar;
 // }
 // console.log("Bu yerda eng ko'p ishlatilgan: " + mostFrequentCharacter('JavaScript') + " harfdir.");
 
